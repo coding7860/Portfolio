@@ -322,17 +322,45 @@ h1 {
 
 .section-image-skills {
   background: linear-gradient(140deg, rgba(44, 140, 195, 0.35), rgba(57, 95, 181, 0.3));
+  border: none;
+  min-height: unset;
+  display: block;
+  overflow: hidden;
 }
 
 .section-image-certs {
   background: linear-gradient(140deg, rgba(112, 104, 222, 0.4), rgba(132, 96, 203, 0.3));
+  border: none;
+  min-height: unset;
+  display: block;
+  overflow: hidden;
+}
+
+.section-image-skills img,
+.section-image-certs img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
 }
 
 .section-image-contact {
   width: min(560px, 100%);
   margin: 0 auto 1rem;
   border: none;
+  min-height: unset;
+  display: block;
+  overflow: hidden;
   background: linear-gradient(140deg, rgba(103, 141, 255, 0.35), rgba(118, 81, 230, 0.32));
+}
+
+.section-image-contact img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center;
 }
 
 .stack {
