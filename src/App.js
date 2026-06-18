@@ -6,9 +6,12 @@ import curoRc from './images/curorc.png';
 import rfpChatBoard from './images/rfp.png';
 import workexperience from './images/workexperiance.jpg';
 import education from './images/education.jpg';
-import mypic from './images/mypic.jpg'
+import skillsImage from './images/skills.png';
+import certificationImage from './images/Certification.png';
+import heroImage from './images/hero image.png';
+import contactImage from './images/contact.png';
 
-const heropic = mypic;
+const heropic = heroImage;
 
 const projects = [
   {
@@ -56,6 +59,8 @@ const skills = [
   'Bootstrap',
   'Node.js',
   'Git & Github',
+  'Postman API',
+  'Redux'
 ];
 
 const certifications = [
@@ -187,7 +192,7 @@ function App() {
         <section id="skills" className="section dual-layout">
           <div className="glass-card reveal">
             <div className="section-image section-image-skills">
-              <span>Add skills image</span>
+              <img src={skillsImage} alt="Technology skills overview" />
             </div>
             <h2 className="section-title">Skills</h2>
             <div className="tags">
@@ -199,7 +204,7 @@ function App() {
 
           <div id="certifications" className="glass-card reveal">
             <div className="section-image section-image-certs">
-              <span>Add certifications image</span>
+              <img src={certificationImage} alt="Certifications and achievements" />
             </div>
             <h2 className="section-title">Certifications & Achievements</h2>
             <ul>
@@ -214,9 +219,9 @@ function App() {
 
         <section id="contact" className="section contact reveal">
           <div className="section-image section-image-contact">
-            <span>Add contact image</span>
+            <img src={contactImage} alt="Contact us" />
           </div>
-          <h2 className="section-title">Let&apos;s build something great.</h2>
+          <h2 className="section-title">Let's build something great.</h2>
           <p>
             Open to frontend and full-stack opportunities. Share your requirement
             and I will deliver polished, scalable interfaces.
