@@ -1,23 +1,24 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import office from './images/office.jpg';
-import hrPortal from './images/hrportal.png';
-import curoRc from './images/curorc.png';
-import rfpChatBoard from './images/rfp.png';
-import workexperience from './images/workexperiance.jpg';
-import education from './images/education.jpg';
-import skillsImage from './images/skills.png';
-import certificationImage from './images/Certification.png';
-import heroImage from './images/hero image.png';
-import contactImage from './images/contact.png';
+import curorc from './images/curorc.mp4';
+import rfpChatBoard from './images/rfp.mp4';
+import skillsMedia from './images/skills.mp4';
+import heroVideo from './images/hero.mp4';
+import hrPortalVideo from './images/HrPortal.mp4';
+import workExperienceVideo from './images/work experiance.mp4';
+import educationVideo from './images/education.mp4';
+import certificationVideo from './images/certification.mp4';
+import contactVideo from './images/contactme.mp4';
 
-const heropic = heroImage;
+const heropic = heroVideo;
 
 const projects = [
   {
     title: 'RFP Chat Board',
     stack: 'React (Functional Components), JavaScript, CSS, Material UI',
     image: rfpChatBoard,
+    mediaType: 'video',
     highlights: [
       'Designed a scalable folder architecture for enterprise RFP documents, including nested tree view support to improve large-file navigation and reduce lookup time for users.',
       'Implemented bulk operations like select, rename, delete, and validation-driven upload controls with file size/type restrictions to prevent invalid submissions.',
@@ -28,7 +29,8 @@ const projects = [
   {
     title: 'Human Resources (HR) Management Portal',
     stack: 'React (Class Components), JavaScript, Node.js',
-    image: hrPortal,
+    image: hrPortalVideo,
+    mediaType: 'video',
     highlights: [
       'Developed face-based attendance flow integrated with present-day summaries to improve tracking accuracy and reduce manual updates.',
       'Built visitor log management, work-from-home timesheet modules, and approval pipelines that improved operational transparency for managers.',
@@ -39,7 +41,8 @@ const projects = [
   {
     title: 'CuroRC',
     stack: 'React, Mantine, Axios, jsPDF, xlsx',
-    image: curoRc,
+    image: curorc,
+    mediaType: 'video',
     highlights: [
       'Engineered responsive tab-oriented Manage and Detail interfaces with reusable components that accelerated feature development across multiple modules.',
       'Built production-ready data tables with search, pagination, empty states, and action consistency for Members, Affiliates, Billing, and Orders.',
@@ -172,7 +175,7 @@ function App() {
             </div>
           </div>
           <div className="hero-image glass-card reveal">
-            <img src={heropic} alt="Syed Ajmal Quadri hero portrait" />
+            <video src={heropic} autoPlay loop muted playsInline alt="Syed Ajmal Quadri hero portrait" />
           </div>
         </header>
 
@@ -182,7 +185,13 @@ function App() {
             {projects.map((project) => (
               <article className="glass-card reveal" key={project.title}>
                 <div className="project-image">
-                  {project.image ? <img src={project.image} alt={project.title} /> : <span>Add project image</span>}
+                  {project.mediaType === 'video' ? (
+                    <video src={project.image} autoPlay loop muted playsInline />
+                  ) : project.image ? (
+                    <img src={project.image} alt={project.title} />
+                  ) : (
+                    <span>Add project image</span>
+                  )}
                 </div>
                 <h3>{project.title}</h3>
                 <p className="stack">{project.stack}</p>
@@ -199,7 +208,7 @@ function App() {
         <section id="experience" className="section dual-layout">
           <div className="glass-card reveal">
             <div className="section-image section-image-experience">
-              <img src={workexperience} alt="Work experience" />
+              <video src={workExperienceVideo} autoPlay loop muted playsInline />
             </div>
             <h2 className="section-title">Experience</h2>
             <h3>Jr. Application Developer</h3>
@@ -214,7 +223,7 @@ function App() {
 
           <div className="glass-card reveal">
             <div className="section-image section-image-education">
-              <img src={education} alt="Education" />
+              <video src={educationVideo} autoPlay loop muted playsInline />
             </div>
             <h2 className="section-title">Training & Education</h2>
             <h3>Training - Maganti IT Solutions</h3>
@@ -231,7 +240,7 @@ function App() {
         <section id="skills" className="section dual-layout">
           <div className="glass-card reveal">
             <div className="section-image section-image-skills">
-              <img src={skillsImage} alt="Technology skills overview" />
+              <video src={skillsMedia} autoPlay loop muted playsInline />
             </div>
             <h2 className="section-title">Skills</h2>
             <div className="tags">
@@ -243,7 +252,7 @@ function App() {
 
           <div id="certifications" className="glass-card reveal">
             <div className="section-image section-image-certs">
-              <img src={certificationImage} alt="Certifications and achievements" />
+              <video src={certificationVideo} autoPlay loop muted playsInline />
             </div>
             <h2 className="section-title">Certifications & Achievements</h2>
             <ul>
@@ -258,7 +267,7 @@ function App() {
 
         <section id="contact" className="section contact reveal">
           <div className="section-image section-image-contact">
-            <img src={contactImage} alt="Contact us" />
+            <video src={contactVideo} autoPlay loop muted playsInline />
           </div>
           <h2 className="section-title">Let's build something great.</h2>
           <p>
